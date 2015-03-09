@@ -2,7 +2,7 @@ var startMatrix = [];
 var startElement = [];
 var touchStart = [];
 var positions = [];
-var central_area = 25.0;
+var central_area = 35.0;
 
 var verifica_zona_punto = "centro";
 
@@ -24,7 +24,7 @@ function getCenterImage(element){
     var width = element.firstChild.width.baseVal.value;
     var height = element.firstChild.height.baseVal.value;
     
-    if(width <= height){
+    if(width >= height){
         return width*central_area/100.0;
     }
     else return height*central_area/100.0;
@@ -193,7 +193,6 @@ function touchmove(evt) {
 				.translate(x1,y1)
 				.rotateFromVector(x2-cx, y2-cy)
 				.rotateFromVector(x1-cx, -y1+cy)
-				//.rotate(provaAlpha)
 				.translate(-x1,-y1)
 				.multiply(startMatrix[currTouch.identifier]);
                 

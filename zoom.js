@@ -48,7 +48,7 @@ function zoom(id, area){
         var translate_x = (svgElement_width/2) + 50;
         var translate_y = 50 + height_pan;
 		  alpha = -alpha;
-		  var s = "";
+		  //var s = "";
     }
     //var matrix_element = document.getElementById(id).transform.baseVal.getItem(0).matrix;
     //console.log(matrix_element);

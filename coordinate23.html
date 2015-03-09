@@ -6,12 +6,65 @@
         <script type="application/ecmascript" src="remove.js"></script>
         <script type="application/ecmascript" src="json_image_file.json"></script>
         <script type="application/ecmascript" src="special_areas.js"></script>
-        <script type="application/ecmascript" src="get_image.js"></script>
+<!--        <script type="application/ecmascript" src="get_image.js"></script>-->
+        <script type="application/ecmascript" src="insertImage.js"></script>
         <script type="application/ecmascript" src="print_info_image.js"></script>
         <script type="application/ecmascript" src="move.js"></script>
         <script type="application/ecmascript" src="zoom.js"></script>
         
         <script type="application/ecmascript" src="verifica_zona.js"></script>
+
+	<script language="javascript" type="text/javascript">
+/*
+		var wsUri = "ws://echo.websocket.org/";
+		var output; 
+		function initWebSocket() {
+			websocket = new WebSocket(wsUri);
+			websocket.onopen = function(evt) { onOpen(evt) };
+			websocket.onclose = function(evt) { onClose(evt) };
+			websocket.onmessage = function(evt) { onMessage(evt) };
+			websocket.onerror = function(evt) { onError(evt) };
+		}
+		function onOpen(evt) {
+			alert("CONNECTED");
+			doSend("WebSocket rocks");
+		} 
+		function onClose(evt) {
+			alert("DISCONNECTED");
+		}
+		function onMessage(evt) {
+			alert('RESPONSE: ' + evt.data+'.');
+//			websocket.close();
+		}
+		function onError(evt) {
+			alert('ERROR: ' + evt.data + '.');
+		}
+		function doSend(message) {
+			alert("SENT: " + message + '.');
+			websocket.send(message);
+		}
+		window.addEventListener("load", initWebSocket, false);
+*/
+	</script>
+        
+	<script language="javascript" type="text/javascript">
+		function addImage() {
+			console.log("executing autoAdd...");
+//			insertImage("http://a5.mzstatic.com/us/r30/Purple/v4/a8/83/1b/a8831bae-f7ca-0e54-89a2-f2557c33721e/icon_256.png");
+			loadImage();
+			console.log("autoAdd done!");
+			setTimeOut();
+		} 
+		function setTimeOut() {
+			var timeoutID = window.setTimeout(addImage, 5000);
+			console.log("autoAdd: timeout set!");
+		}
+		function initAutoAdd() {
+			console.log("setting autoAdd...");
+			setTimeOut();
+		}
+		window.addEventListener("load", initAutoAdd, false);
+	</script>
         
     </head>
     
@@ -34,29 +87,41 @@
             
 				<image x="0" y="0" width="1920" height="1080" xlink:href="http://cdn.sfondihd.it/wp-content/uploads/2011/01/sfondi_full_hd_16-9_1920x1080_21_20101120_1008774760.jpg"/>
 
-				
-            <g id="1">
-            <rect x="0" y="265" width="100" height="200" style="fill:white" stroke="black"/>
-					<!--<text x="15" y="200" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>-->
-					<image x="2" y="267" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(90, 52, 367)"/>
+<!--				
+            <g id="1_A">
+            <rect x="0" y="115" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="2" y="117" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(90, 52, 217)"/>
 				</g>
-				
+-->			
 				<!-- http://img2.wikia.nocookie.net/__cb20110907120319/it_/images/7/77/Info-icon.svg -->
-				
-				<g id="2">
-				<rect x="0" y="615" width="100" height="200" style="fill:white" stroke="black"/>
-					<!--<text x="15" y="500" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>-->
-					<image x="2" y="613" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(90, 48, 717)"/>
+
+<!--				
+				<g id="2_A">
+				<rect x="0" y="440" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="2" y="442" width="95" height="200" xlink:href="http://img2.wikia.nocookie.net/__cb20110907120319/it_/images/7/77/Info-icon.svg" transform="rotate(90, 52, 542)"/>
             </g>
+-->
 				
-				<g id="3">
-				<rect x="1820" y="265" width="100" height="200" style="fill:white" stroke="black"/>
-					<image x="1822" y="267" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(-90, 1872, 367)"/>
+				<g id="3_A">
+				<rect x="0" y="765" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="2" y="767" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(90, 52, 867)"/>
 				</g>
 				
-				<g id="4">
-				<rect x="1820" y="615" width="100" height="200" style="fill:white" stroke="black"/>
-					<image x="1822" y="617" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(-90, 1868, 717)"/>
+				
+				<g id="1_B">
+				<rect x="1820" y="115" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="1822" y="117" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(-90, 1872, 217)"/>
+				</g>
+
+<!--			
+				<g id="2_B">
+				<rect x="1820" y="440" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="1822" y="442" width="95" height="200" xlink:href="http://img2.wikia.nocookie.net/__cb20110907120319/it_/images/7/77/Info-icon.svg " transform="rotate(-90, 1872, 542)"/>
+				</g>
+				
+				<g id="3_B">
+				<rect x="1820" y="765" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="1822" y="767" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(-90, 1872, 867)"/>
 				</g>
 					<!--<text x="615" y="500" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>-->
             
@@ -88,13 +153,43 @@
 		  <g id="descr">
 		  </g>
 		  
-        <script>
-                
+	<script type="application/ecmascript">
+
+var pfx = ["webkit", "moz", "ms", "o", ""];
+function RunPrefixMethod(obj, method) {
+	
+	var p = 0, m, t;
+	while (p < pfx.length && !obj[m]) {
+		m = method;
+		if (pfx[p] == "") {
+			m = m.substr(0,1).toLowerCase() + m.substr(1);
+		}
+		m = pfx[p] + m;
+		t = typeof obj[m];
+		if (t != "undefined") {
+			pfx = [pfx[p]];
+			return (t == "function" ? obj[m]() : obj[m]);
+		}
+		p++;
+	}
+
+}
+
+var e = document.getElementById("mainElement");
+
+e.onclick = function() {
+  RunPrefixMethod(e, "RequestFullScreen");
+}
+
+	</script>
+
+        <script type="application/ecmascript">
+                /*
                 var image_list = readJSON("json_image_file.json");
                 var all_images = document.getElementById("all_images");
                 getImage(image_list, all_images);
-                
-		  </script>
+                */
+	</script>
 
         </svg>
         
@@ -108,6 +203,7 @@
                 movableList[movableIndex].addEventListener('touchend',touchend);
             }
         
+
         </script>
         
     </body>
