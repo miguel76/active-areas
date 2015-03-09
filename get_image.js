@@ -26,9 +26,8 @@ function getImage(images, group){
 		"beforeend",
 		"<g id=\"movable"+d+"\" class=\"movable\" transform=\"translate("+position_x+","+position_y+") rotate("+alpha+")\" ontouchstart=\"touchstart(Event)\" ontouchmove=\"touchmove(Event)\" ontouchend=\"touchend(Event)\">"+
 //		"<use width='300' height='300' xlink:href='puzzle.svg#foto'/>"+
-		"<image transform='translate(-460,-267)' width='960' height='560' xlink:href='foto.svg'/>"+
-//		"<image id=\"mov"+d+"\" x=\""+x+"\" y=\""+y+"\" width="+"\""+images[i].width+"\" height=\""+images[i].height+"\" xlink:href=\""+images[i].URL+"\"/>"+
-		"<image id='mov"+d+"' x='-160' y='-85' width='320' height='170' xlink:href='"+images[i].URL+"'/>"+
+//		"<image width='300' height='300' xlink:href='foto.svg'/>"+ 
+		"<image id=\"mov"+d+"\" x=\""+x+"\" y=\""+y+"\" width="+"\""+images[i].width+"\" height=\""+images[i].height+"\" xlink:href=\""+images[i].URL+"\"/>"+
 		"</g>");
             
             //position.push({id : "mov"+d, area : [0, 0, 0, 0]});
