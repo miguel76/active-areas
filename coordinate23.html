@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title> coordinate 23 </title>
+        
+        <script type="text/javascript"> </script>
+        
+        <script type="application/ecmascript" src="json_image_file.json"></script>
+        <script type="application/ecmascript" src="special_areas.js"></script>
+        <script type="application/ecmascript" src="get_image.js"></script>
+        <script type="application/ecmascript" src="print_info_image.js"></script>
+        <script type="application/ecmascript" src="move.js"></script>
+        <script type="application/ecmascript" src="zoom.js"></script>
+        <script type="application/ecmascript" src="remove.js"></script>
+        <script type="application/ecmascript" src="verifica_zona.js"></script>
+        
+        <!--<script type="application/ecmascript" src="file_script.html"></script>-->
+        
+        
+    </head>
+    
+    <body>
+        
+        <svg
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mainElement"
+            version="1.1"
+            width="1920" height="1080">
+           
+            <!--width="1920" height="1080">
+            
+            <!-- <g transform="translate(0,0)" ontouchstart="touchstart(Event)"> -->
+            
+            
+            <rect x="0" y="100" width="100" height="200" style="fill:red"/>
+            <text x="15" y="200" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>
+            <rect x="0" y="400" width="100" height="200" style="fill:black"/>
+            <text x="15" y="500" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>
+           
+            <rect x="1820" y="400" width="100" height="200" style="fill:red"/>
+            <rect x="1180" y="400" width="100" height="200" style="fill:red"/>
+            <text x="615" y="500" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>
+            <rect x="1180" y="100" width="100" height="200" style="fill:black"/>
+            <text x="615" y="200" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>
+
+        <g id="all_images">
+            <!--
+            <g id="movable_a" class="movable" transform="translate(400,400)"
+                ontouchstart="touchstart(Event)" ontouchmove="touchmove(Event)" ontouchend="touchend(Event)">
+                <image id="mov_a" x="-100" y="-100" width="200px" height="200px" xlink:href="http://areeweb.polito.it/ricerca/relgrav/kolmogorov/Pulsars_e_Navigazione_files/posizione_cartesiana2.png"/>
+                <!-- http://media.tvblog.it/p/pap/paperino.jpg /Users/Marco/Desktop/jpg/paperino.jpg http://areeweb.polito.it/ricerca/relgrav/kolmogorov/Pulsars_e_Navigazione_files/posizione_cartesiana2.png /Users/Marco/Desktop/jpg/posizione_cartesiana2.png-->
+                
+            <!--<image id="mov" x="-100" y="-100" width="200px" height="200px" xlink:href="http://media.tvblog.it/p/pap/paperino.jpg"/>-->
+            
+            <!--
+            </g>
+            
+            <g id="movable_b" class="movable" transform="translate(200,200)"
+                ontouchstart="touchstart(Event)" ontouchmove="touchmove(Event)" ontouchend="touchend(Event)">
+                <image id="mov_b" x="-50" y="-75" width="100px" height="150px" xlink:href="http://media.tvblog.it/p/pap/paperino.jpg"/>
+            </g>
+             -->
+        </g>
+        
+        <g id="zoom_pan">
+        
+        
+        </g>
+        
+            <script>
+                //var all_areas = load_areas();
+                var image_list = readJSON("json_image_file.json");
+                var all_images = document.getElementById("all_images");
+                getImage(image_list, all_images);
+                //getImage(image_list, all_images);
+            </script>
+
+<script>
+
+var pfx = ["webkit", "moz", "ms", "o", ""];
+function RunPrefixMethod(obj, method) {
+	
+	var p = 0, m, t;
+	while (p < pfx.length && !obj[m]) {
+		m = method;
+		if (pfx[p] == "") {
+			m = m.substr(0,1).toLowerCase() + m.substr(1);
+		}
+		m = pfx[p] + m;
+		t = typeof obj[m];
+		if (t != "undefined") {
+			pfx = [pfx[p]];
+			return (t == "function" ? obj[m]() : obj[m]);
+		}
+		p++;
+	}
+
+}
+
+var e = document.getElementById("mainElement");
+
+e.onclick = function() {
+  RunPrefixMethod(e, "RequestFullScreen");
+}
+
+
+</script>
+        </svg>
+        
+        <script type="application/ecmascript">
+            
+            var movableList = document.getElementsByClassName("movable");
+            
+            for (var movableIndex = 0; movableIndex < movableList.length; movableIndex++) {
+                movableList[movableIndex].addEventListener('touchstart',touchstart);
+                movableList[movableIndex].addEventListener('touchmove',touchmove);
+                movableList[movableIndex].addEventListener('touchend',touchend);
+            }
+        
+        </script>
+        
+    </body>
+</html>
