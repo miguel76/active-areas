@@ -1,20 +1,17 @@
 <html>
     <head>
-        <title> coordinate 23 </title>
+        <title> platform </title>
         
         <script type="text/javascript"> </script>
-        
+        <script type="application/ecmascript" src="remove.js"></script>
         <script type="application/ecmascript" src="json_image_file.json"></script>
         <script type="application/ecmascript" src="special_areas.js"></script>
         <script type="application/ecmascript" src="get_image.js"></script>
         <script type="application/ecmascript" src="print_info_image.js"></script>
         <script type="application/ecmascript" src="move.js"></script>
         <script type="application/ecmascript" src="zoom.js"></script>
-        <script type="application/ecmascript" src="remove.js"></script>
+        
         <script type="application/ecmascript" src="verifica_zona.js"></script>
-        
-        <!--<script type="application/ecmascript" src="file_script.html"></script>-->
-        
         
     </head>
     
@@ -35,17 +32,36 @@
             
             <!-- <g transform="translate(0,0)" ontouchstart="touchstart(Event)"> -->
             
+				<image x="0" y="0" width="1920" height="1080" xlink:href="http://cdn.sfondihd.it/wp-content/uploads/2011/01/sfondi_full_hd_16-9_1920x1080_21_20101120_1008774760.jpg"/>
+
+				
+            <g id="1">
+            <rect x="0" y="265" width="100" height="200" style="fill:white" stroke="black"/>
+					<!--<text x="15" y="200" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>-->
+					<image x="2" y="267" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(90, 52, 367)"/>
+				</g>
+				
+				<!-- http://img2.wikia.nocookie.net/__cb20110907120319/it_/images/7/77/Info-icon.svg -->
+				
+				<g id="2">
+				<rect x="0" y="615" width="100" height="200" style="fill:white" stroke="black"/>
+					<!--<text x="15" y="500" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>-->
+					<image x="2" y="613" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(90, 48, 717)"/>
+            </g>
+				
+				<g id="3">
+				<rect x="1820" y="265" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="1822" y="267" width="95" height="200" xlink:href="http://www.macsecrets.com/2013/img/trash_250.jpg" transform="rotate(-90, 1872, 367)"/>
+				</g>
+				
+				<g id="4">
+				<rect x="1820" y="615" width="100" height="200" style="fill:white" stroke="black"/>
+					<image x="1822" y="617" width="95" height="200" xlink:href="http://ec.l.thumbs.canstockphoto.com/canstock17378219.jpg" transform="rotate(-90, 1868, 717)"/>
+				</g>
+					<!--<text x="615" y="500" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>-->
             
-            <rect x="0" y="100" width="100" height="200" style="fill:red"/>
-            <text x="15" y="200" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>
-            <rect x="0" y="400" width="100" height="200" style="fill:black"/>
-            <text x="15" y="500" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>
-           
-            <rect x="1820" y="400" width="100" height="200" style="fill:red"/>
-            <rect x="1180" y="400" width="100" height="200" style="fill:red"/>
-            <text x="615" y="500" style="font-size:20;font-weight:bold;fill:black">ZONA 1</text>
-            <rect x="1180" y="100" width="100" height="200" style="fill:black"/>
-            <text x="615" y="200" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>
+					<!--<rect x="1180" y="100" width="100" height="200" style="fill:black"/>-->
+					<!--<text x="615" y="200" style="font-size:20;font-weight:bold;fill:red">ZONA 2</text>-->
 
         <g id="all_images">
             <!--
@@ -67,48 +83,19 @@
         </g>
         
         <g id="zoom_pan">
-        
-        
         </g>
         
-            <script>
-                //var all_areas = load_areas();
+		  <g id="descr">
+		  </g>
+		  
+        <script>
+                
                 var image_list = readJSON("json_image_file.json");
                 var all_images = document.getElementById("all_images");
                 getImage(image_list, all_images);
-                //getImage(image_list, all_images);
-            </script>
+                
+		  </script>
 
-<script>
-
-var pfx = ["webkit", "moz", "ms", "o", ""];
-function RunPrefixMethod(obj, method) {
-	
-	var p = 0, m, t;
-	while (p < pfx.length && !obj[m]) {
-		m = method;
-		if (pfx[p] == "") {
-			m = m.substr(0,1).toLowerCase() + m.substr(1);
-		}
-		m = pfx[p] + m;
-		t = typeof obj[m];
-		if (t != "undefined") {
-			pfx = [pfx[p]];
-			return (t == "function" ? obj[m]() : obj[m]);
-		}
-		p++;
-	}
-
-}
-
-var e = document.getElementById("mainElement");
-
-e.onclick = function() {
-  RunPrefixMethod(e, "RequestFullScreen");
-}
-
-
-</script>
         </svg>
         
         <script type="application/ecmascript">

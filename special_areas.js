@@ -1,69 +1,99 @@
-var special_areas = [{
+var special_areas =
+[
+	{
+	top:265, left:0, bottom:465, right:100,
+		
+		onenter: function(id){
 
-top:100, left:0, bottom:300, right:100,
+			console.log("sono entrato: "+ id);
+			zoom(id, this);
+			//info_image(id);
+		},
+		
+		onmove: function(id){
 
-onenter: function(id){
-  
-    //console.log("WAREA:"+what_area);
-    //position[i].area = [special_areas[what_area].top, special_areas[what_area].left, special_areas[what_area].width, special_areas[what_area].height];
-    console.log("sono entrato: "+ id);
-    //alert(position[i].id);
-    zoom(id, this);
-    info_image(id);
-                     
-},
-onmove: function(id){
-    
-                     var id_image = document.getElementById(id).firstChild.id;
-                     console.log(id_image +" mi sto muovendo all'interno della zona: ");//+special_areas[i].top,special_areas[i].left,special_areas[i].width,special_areas[i].height);
-},
-onleave: function(id){
-                     
-    console.log("sono uscito");
-    //console.log("img " +position[i].id+" zona:"+position[i].area); //controllare!!!! attenzione all'id dell'immagine!
-}},
+			var id_image = document.getElementById(id).firstChild.id;
+			console.log(id_image +" mi sto muovendo all'interno della zona: ");
+		},
 
-{
-top:100, left:600, bottom:300, right:700,
+		onleave: function(id){
+			remove_zoom_pan(id, this);
+			console.log("sono uscito");
+		}
+	},
 
-onenter: function(id){
-var s = 22222222;
-console.log("SONO ENTRATO: "+ s);
-                     zoom(id, this);
-console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
-},
-onmove: function(id){
-    console.log(this);
-    console.log("MI STO MUOVENDO ALL'INTERNO DELLA ZONA 2 ");//+special_areas[i].top,special_areas[i].left,special_areas[i].width,special_areas[i].height);
-},
-onleave: function(id){
-                     //remove(id);
-    console.log("SONO USCITO DALLA ZONA 2");
-    //console.log("img" + position[i].id+" zona:"+position[i].area);
-}},
-                     {
-                     top:400, left:600, bottom:600, right:700,
-                     
-                     onenter: function(id){
-                     
-                     console.log("elimino l'elemento: "+ id);
-                     remove(id);
-                     
-                     },
-                     onmove: function(id){
-                     console.log("MI STO MUOVENDO ALL'INTERNO DELLA ZONA 2 ");//+special_areas[i].top,special_areas[i].left,special_areas[i].width,special_areas[i].height);
-                     },
-                     onleave: function(id){
-                     console.log("SONO USCITO DALLA ZONA 2");
-                     //console.log("img" + position[i].id+" zona:"+position[i].area);
-                     }
-                     }];
+	{
+	top:615, left:0, bottom:815, right:100,
 
-console.log("special area");
-console.log(special_areas);
-console. log(special_areas.length);
+		onenter: function(id){
 
-for (i in special_areas) {
-        console.log(special_areas[i].top,special_areas[i].left,special_areas[i].bottom,special_areas[i].right);
-}
-//console.log(position);
+			console.log("sono entrato: "+ id);
+			remove(id);
+		},
+	
+		//onenter: remove,
+		
+		onmove: function(id){
+
+			var id_image = document.getElementById(id).firstChild.id;
+			console.log(id_image +" mi sto muovendo all'interno della zona: ");
+		},
+
+		onleave: function(id){
+
+			console.log("sono uscito");
+		}
+	},
+	
+	{
+	top:265, left:1820, bottom:465, right:1920,
+
+		onenter: function(id){
+			//var s = 22222222;
+			//console.log("SONO ENTRATO: "+ s);
+			remove(id);
+			//console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+		},
+		
+		onmove: function(id){
+			console.log(this);
+			console.log("MI STO MUOVENDO ALL'INTERNO DELLA ZONA 2 ");
+		},
+	
+		onleave: function(id){
+			//remove(id);
+			console.log("SONO USCITO DALLA ZONA 2");
+			//console.log("img" + position[i].id+" zona:"+position[i].area);
+		}
+	},
+
+	{
+	top:615, left:1820, bottom:815, right:1920,
+
+		onenter: function(id){
+	
+			zoom(id, this);
+			console.log("elimino l'elemento: "+ id);
+
+		},
+		
+		onmove: function(id){
+			console.log("MI STO MUOVENDO ALL'INTERNO DELLA ZONA 2 ");
+		},
+	
+		onleave: function(id){
+			remove_zoom_pan(id, this);
+			console.log("SONO USCITO DALLA ZONA 2");
+			//console.log("img" + position[i].id+" zona:"+position[i].area);
+		}
+	}
+];
+
+	console.log("special area");
+	console.log(special_areas);
+	console. log(special_areas.length);
+
+	for (i in special_areas) {
+		console.log(special_areas[i].top,special_areas[i].left,special_areas[i].bottom,special_areas[i].right);
+	}
+	//console.log(position);
